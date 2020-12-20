@@ -11,12 +11,12 @@ namespace Acme.BookStore
         : IDataSeedContributor, ITransientDependency
     {
         private readonly IRepository<Book, Guid> _bookRepository;
-
+    
         public BookStoreDataSeederContributor(IRepository<Book, Guid> bookRepository)
         {
             _bookRepository = bookRepository;
         }
-
+    
         public async Task SeedAsync(DataSeedContext context)
         {
             if (await _bookRepository.GetCountAsync() <= 0)
@@ -31,7 +31,7 @@ namespace Acme.BookStore
                     },
                     autoSave: true
                 );
-
+    
                 await _bookRepository.InsertAsync(
                     new Book
                     {
