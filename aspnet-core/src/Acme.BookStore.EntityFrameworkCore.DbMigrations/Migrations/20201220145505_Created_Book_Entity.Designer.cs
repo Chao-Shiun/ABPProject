@@ -11,7 +11,7 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Acme.BookStore.Migrations
 {
     [DbContext(typeof(BookStoreMigrationsDbContext))]
-    [Migration("20201220120818_Created_Book_Entity")]
+    [Migration("20201220145505_Created_Book_Entity")]
     partial class Created_Book_Entity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
